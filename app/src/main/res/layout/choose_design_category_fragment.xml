@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.nkr.fashionita.ui.fragment.post.ChooseDesignCategoryViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+
+        >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/spaceNormal"
+
+        >
+
+        <!--include toolbar-->
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_choose_category"
+             />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_selected_photos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar"
+            android:overScrollMode="never"
+            android:orientation="horizontal"
+            adapterGridChosenImages="@{viewModel.adapter}"
+            />
+
+
+        <TextView
+            android:id="@+id/tv_category_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/search_category"
+            android:layout_below="@+id/rv_selected_photos"
+            android:textSize="@dimen/textsize_title"
+            android:layout_marginTop="@dimen/spaceNormal"
+            android:layout_marginBottom="@dimen/spaceNormal"
+            android:textColor="@color/colorTextGray"
+            android:fontFamily="@font/poppins_bold"
+
+            />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_category_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_category_title"
+            android:overScrollMode="never"
+            android:orientation="horizontal"
+            bindingAdapter="@{viewModel.categoryListAdapter}"
+            showDefaultDividerLine="@{true}"
+            defaultRvLayout="@{true}"
+
+            />
+
+
+
+
+    </RelativeLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

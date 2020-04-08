@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="@dimen/space4dp"
+    android:background="@drawable/bg_white_rounded"
+    android:layout_marginBottom="@dimen/spaceNormal"
+    android:layout_marginStart="@dimen/spaceSmall"
+    android:layout_marginEnd="@dimen/spaceSmall"
+
+    >
+
+    <TextView
+        android:id="@+id/hc_label_recent_orders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spaceNormal"
+        android:fontFamily="@font/poppins_bold"
+        android:padding="@dimen/space4dp"
+        android:text="Your recent orders"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/hc_label_recent_orders"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="@dimen/spaceNormal"
+        >
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="@dimen/defaultIconSizeXmLarge"
+        android:layout_height="@dimen/defaultIconSizeXmLarge"
+        android:src="@drawable/shoes"
+        android:layout_weight="1"
+        app:border_width="@dimen/space2dp"
+        app:border_color="@color/colorGray"
+        />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="@dimen/defaultIconSizeXmLarge"
+            android:layout_height="@dimen/defaultIconSizeXmLarge"
+            android:src="@drawable/shoes"
+            android:layout_weight="1"
+            app:border_width="@dimen/space2dp"
+            app:border_color="@color/colorGray"
+            />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="@dimen/defaultIconSizeXmLarge"
+            android:layout_height="@dimen/defaultIconSizeXmLarge"
+            android:src="@drawable/shoes"
+            android:layout_weight="1"
+            app:border_width="@dimen/space2dp"
+            app:border_color="@color/colorGray"
+            />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="@dimen/defaultIconSizeXmLarge"
+            android:layout_height="@dimen/defaultIconSizeXmLarge"
+            android:src="@drawable/shoes"
+            android:layout_weight="1"
+            app:border_width="@dimen/space2dp"
+            app:border_color="@color/colorGray"
+            />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

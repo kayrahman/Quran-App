@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "38801812393",
+    "firebase_url": "https://fashionita-d37d5.firebaseio.com",
+    "project_id": "fashionita-d37d5",
+    "storage_bucket": "fashionita-d37d5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:38801812393:android:b8921a4369f5b23798b2b8",
+        "android_client_info": {
+          "package_name": "com.nkr.fashionita"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "38801812393-mksopnmls5b1nc1mad2i319cdn1ae28f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nkr.fashionita",
+            "certificate_hash": "1b2d3f87982ff45aea3d5b90c5252bd2075187e9"
+          }
+        },
+        {
+          "client_id": "38801812393-do8ntn3714oa869emjjee809hhbp691f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrEjfaHm0qOnTJO9YcQYVShi-BhVO1jaA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "38801812393-do8ntn3714oa869emjjee809hhbp691f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/spaceNormal"
+    android:background="@color/colorWhite"
+
+    >
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spaceNormal"
+        android:background="@drawable/bg_white_rounded"
+        android:fontFamily="@font/poppins_bold"
+        android:padding="@dimen/space4dp"
+        android:text="Your current order status"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circleImageView"
+        android:layout_width="@dimen/defaultIconSizeXXLarge"
+        android:layout_height="@dimen/defaultIconSizeXXLarge"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/shoes"
+        app:border_width="@dimen/space2dp"
+        app:border_color="@color/colorMain"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_purple"
+        android:fontFamily="@font/poppins_bold"
+        android:padding="@dimen/space8dp"
+        android:textAlignment="center"
+        android:text="OUT FOR DELIVERY"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/textsize_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/circleImageView" />
+
+
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        android:layout_marginLeft="@dimen/spaceNormal"
+        android:layout_marginRight="@dimen/spaceNormal"
+        android:background="@drawable/bg_white_rounded"
+        android:elevation="@dimen/space4dp"
+        android:paddingLeft="@dimen/spaceNormal"
+        android:paddingRight="@dimen/spaceNormal"
+        android:paddingTop="@dimen/space4dp"
+        android:paddingBottom="@dimen/space4dp"
+        android:layout_marginTop="@dimen/spaceNormal"
+        android:layout_marginBottom="@dimen/spaceNormal"
+        >
+
+        <ImageView
+            android:id="@+id/iv_indicator_ordered"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/bg_dot"
+            android:tint="@color/colorGray"
+            />
+
+        <ProgressBar
+            android:id="@+id/pb_ordered_packed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:progress="0"
+            android:progressTint="@color/dark_green"
+            android:progressBackgroundTint="@color/colorGray"
+            android:layout_weight="1"
+            />
+
+        <ImageView
+            android:id="@+id/iv_indicator_packed"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/bg_dot"
+            android:tint="@color/colorGray"
+            />
+
+        <ProgressBar
+            android:id="@+id/pb_packed_shipped"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:progress="0"
+            android:progressTint="@color/dark_green"
+            android:layout_weight="1"
+            />
+
+        <ImageView
+            android:id="@+id/iv_shipped"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/bg_dot"
+            android:tint="@color/colorGray"
+            />
+
+        <ProgressBar
+            android:id="@+id/pb_shipped_delivered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:progress="0"
+            android:progressTint="@color/dark_green"
+            android:layout_weight="1"
+            />
+
+        <ImageView
+            android:id="@+id/pb_delivered"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/bg_dot"
+            android:tint="@color/colorGray"
+            />
+        
+
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

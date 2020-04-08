@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.nkr.fashionita.ui.fragment.productDetail.ProductDetailViewModel" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/spaceNormal"
+        >
+
+    <TextView
+        android:id="@+id/tv_prod_title"
+        style="@style/Text.title_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+
+        />
+
+
+        <TextView
+            style="@style/Text.title_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Getting This"
+          />
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mailing &amp; Delivery"
+            android:textSize="@dimen/textsize_large"
+            android:drawableLeft="@drawable/delivery"
+            android:drawablePadding="@dimen/spaceSmall"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Free Postage"
+            android:textSize="@dimen/textsize_large"
+            android:layout_marginTop="@dimen/spaceSmall"
+            />
+
+
+
+
+        <TextView
+            style="@style/Text.title_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Share This Listing"
+           />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:layout_width="@dimen/defaultIconSizeXLarge"
+                android:layout_height="@dimen/defaultIconSizeXLarge"
+                android:src="@drawable/whatsapp"
+                />
+
+            <ImageView
+                android:layout_width="@dimen/defaultIconSizeXLarge"
+                android:layout_height="@dimen/defaultIconSizeXLarge"
+                android:src="@drawable/download"
+                android:padding="5dp"
+                />
+
+
+
+        </LinearLayout>
+
+
+        <TextView
+            style="@style/Text.title_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Public Comments"
+           />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/public_cmnt_placehoder"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Post a new comment"
+            android:gravity="end"
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="@font/poppins_bold"
+            />
+
+
+
+        <TextView
+            style="@style/Text.title_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Similar Items"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_similar_items"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context=".ui.login.register.RegisterFragment">
+
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="130dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.155"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_girl_login" />
+
+
+    <ImageView
+        android:id="@+id/iv_logo_meyeti"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="@dimen/spaceXSmall"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.341"
+        app:layout_constraintStart_toEndOf="@+id/iv_logo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/meyeti_logo" />
+
+    <ImageView
+        android:id="@+id/iv_one"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/cv_email_pass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_logo_meyeti"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_flower" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_email_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_logo"
+        android:layout_margin="@dimen/spaceXLarge"
+        app:cardCornerRadius="@dimen/spaceNormal"
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/spaceNormal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/spaceNormal"
+                android:layout_marginRight="@dimen/spaceNormal"
+
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_fm_register_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Name"
+                    android:inputType="textEmailAddress"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/spaceNormal"
+
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_fm_register_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/spaceNormal"
+                android:layout_marginRight="@dimen/spaceNormal">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_fm_register_pw"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Password"
+                    android:inputType="textPassword" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/spaceNormal"
+                >
+
+
+                <Button
+                    android:id="@+id/btn_fm_register"
+                    style="@android:style/Widget.Button.Small"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="@dimen/space2dp"
+                    android:layout_marginRight="@dimen/spaceNormal"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_btn_login"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Register"
+                    android:textColor="@color/colorWhite" />
+
+
+                <TextView
+                    android:id="@+id/label_signin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Already have an account? Sign in"
+                    android:textSize="@dimen/textsize_small"
+                    android:textAlignment="center"
+                    android:layout_marginBottom="@dimen/spaceSmall"
+                    android:layout_marginTop="@dimen/spaceSmall"
+                    android:fontFamily="@font/poppins"
+
+
+                    />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/hc_label_signup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Or signup using"
+        android:textAlignment="center"
+        android:layout_marginBottom="@dimen/spaceNormal"
+        android:layout_marginTop="@dimen/spaceNormal"
+        android:fontFamily="@font/poppins"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cv_email_pass"
+
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/hc_label_signup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.456"
+        android:gravity="center"
+        android:background="@color/colorWhite"
+        android:padding="@dimen/spaceNormal"
+        >
+
+        <ImageButton
+            android:id="@+id/btn_auth_attempt"
+            android:layout_width="@dimen/defaultIconSize"
+            android:layout_height="@dimen/defaultIconSize"
+            android:background="@drawable/google"
+            android:layout_marginRight="@dimen/spaceNormal"
+            />
+
+        <ImageButton
+            android:layout_width="@dimen/defaultIconSize"
+            android:layout_height="@dimen/defaultIconSize"
+            android:background="@drawable/facebook"
+            android:layout_marginRight="@dimen/spaceNormal"
+            />
+
+        <ImageButton
+            android:layout_width="@dimen/defaultIconSize"
+            android:layout_height="@dimen/defaultIconSize"
+            android:background="@drawable/call"
+            />
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

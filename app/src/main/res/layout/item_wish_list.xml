@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.nkr.fashionita.ui.adapter.wishlist.WishListAdapterViewModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cly_fresh_finds_item"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/spaceXSmall"
+        android:layout_marginRight="@dimen/spaceXSmall">
+
+
+        <ImageView
+            android:id="@+id/imv_list_item"
+            firestoreImageUrl="@{viewModel.getImgUrl()}"
+            android:layout_width="0dp"
+            android:layout_height="180dp"
+            android:background="@drawable/bg_off_white_rounded"
+            android:scaleType="fitXY"
+            android:src="@drawable/women_casual"
+            app:layout_constraintBottom_toTopOf="@+id/ll_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+
+            />
+
+        <LinearLayout
+            android:id="@+id/ll_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/lbl_item_price"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent">
+
+
+            <TextView
+                android:id="@+id/lbl_item_name"
+                style="@style/Text.Sub"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:text="@{viewModel.getTitle()}"
+                android:textSize="@dimen/XsmallTextSize"
+                tools:text="Salwar" />
+
+
+            <ImageView
+                android:id="@+id/iv_wishlist_icon"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".2"
+                android:src ="@{viewModel.getWishListItemColor() ? @drawable/ic_heart_red : @drawable/ic_heart}"
+
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/lbl_item_price"
+            style="@style/Text.Sub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="@{viewModel.getPrice()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ll_title"
+            tools:text="400tk" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

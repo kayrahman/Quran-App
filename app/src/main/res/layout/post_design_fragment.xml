@@ -1,0 +1,67 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.nkr.fashionita.ui.fragment.post.ChoosePhotosViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        >
+
+        <!--include toolbar-->
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_gallery"
+            bind:viewModel="@{viewModel}" />
+
+
+        <TextView
+            android:id="@+id/tp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Choose up to 5 photos"
+            android:textSize="@dimen/xmmLargeTextSize"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/colorTextGray"
+            android:layout_margin="@dimen/spaceNormal"
+            android:layout_below="@+id/toolbar"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_gallery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tp"
+            android:overScrollMode="never"
+            adapterGrid="@{viewModel.adapter}"
+
+
+            />
+
+    </RelativeLayout>
+</layout>
+
+    <!-- adapterGrid="@{viewModel.adapter}"
+     app:setAdapter="@{viewModel.adapter}"
+    -->
+<!--
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Choose up to 5 photos"
+        android:textSize="@dimen/text_24sp"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@color/colorTextGray"
+        android:layout_margin="@dimen/spaceRegular"
+        />
+
+</FrameLayout>-->

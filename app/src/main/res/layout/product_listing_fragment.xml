@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.fragment.productListing.ProductListingViewModel"
+    >
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.nkr.fashionita.ui.fragment.productListing.ProductListingViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/spaceNormal"
+            >
+
+        <LinearLayout
+            android:id="@+id/ll_back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            >
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/space4dp"
+                app:srcCompat="@drawable/ic_arrow_back_black_24dp" />
+
+
+            <TextView
+                android:id="@+id/hc_lbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Listing"
+                android:textColor="@color/colorTextDarkGray"
+                android:textSize="@dimen/textsize_title"
+                android:layout_weight="1"
+
+                />
+
+
+        </LinearLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/ll_back"
+        app:layout_constraintBottom_toTopOf="@+id/btn_listing_post"
+        android:layout_marginBottom="@dimen/spaceNormal"
+
+        >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/colorWhite"
+        android:layout_marginTop="@dimen/spaceNormal"
+        >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Listing Title"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="@dimen/normalTextSize"
+        android:textColor="@color/colorTextDarkGray"
+        />
+
+        <EditText
+            android:id="@+id/et_listing_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/edittext"
+            android:hint="Name your listing"
+            android:text="Exaple Listing"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Size"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="@dimen/normalTextSize"
+            android:textColor="@color/colorTextDarkGray"
+            />
+
+        <EditText
+            android:id="@+id/et_listing_size"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Size"
+            android:text="Exaple Size"
+            style="@style/edittext"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Brand"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="@dimen/normalTextSize"
+            android:textColor="@color/colorTextDarkGray"
+            />
+
+        <EditText
+            android:id="@+id/et_listing_brand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Brand of your listing"
+            android:text="Exaple Brand"
+            style="@style/edittext"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Item Condition"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="@dimen/normalTextSize"
+            android:textColor="@color/colorTextDarkGray"
+            />
+
+        <EditText
+            android:id="@+id/et_listing_item_condition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Item Condition"
+            android:text="Exaple Condition"
+            style="@style/edittext"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Deal Method"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="@dimen/normalTextSize"
+            android:textColor="@color/colorTextDarkGray"
+            />
+
+        <EditText
+            android:id="@+id/et_listing_deal_method"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name your deal method"
+            android:text="Exaple Method"
+            style="@style/edittext"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Price"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="@dimen/normalTextSize"
+            android:textColor="@color/colorTextDarkGray"
+            />
+
+        <EditText
+            android:id="@+id/et_listing_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Please enter a price"
+            android:text="400"
+            style="@style/edittext"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Description"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="@dimen/normalTextSize"
+            android:textColor="@color/colorTextDarkGray"
+            />
+
+        <EditText
+            android:id="@+id/et_listing_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            style="@style/edittext"
+            android:hint="@string/description"
+
+            android:text="@string/description"
+            />
+
+
+    </LinearLayout>
+
+    </ScrollView>
+
+        <Button
+            android:id="@+id/btn_listing_post"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spaceNormal"
+            android:background="@color/colorOrange"
+            android:fontFamily="@font/poppins_bold"
+            android:text="List it"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
