@@ -136,6 +136,8 @@ const val KEY_CATEGORY_NAME_CATEGORY_DETAIL = "category_name"
  const val COLLECTION_CATEGORIES = "categories"
  const val COLLECTION_WISHLIST = "wish_list"
  const val COLLECTION_CARTLIST = "cart_list"
+ const val COLLECTION_ORDER_HISTORY = "order_history"
+ const val COLLECTION_ORDER_LIST = "order_list"
  const val COLLECTION_SUB_CATEGORIES = "sub_category"
  const val COLLECTION_PRODUCT = "product"
 

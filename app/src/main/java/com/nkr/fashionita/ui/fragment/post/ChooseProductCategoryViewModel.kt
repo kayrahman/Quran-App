@@ -14,7 +14,7 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import kotlin.coroutines.CoroutineContext
 
-class ChooseDesignCategoryViewModel(imagePaths:ArrayList<String>) : ViewModel(),CoroutineScope {
+class ChooseProductCategoryViewModel(val imagePaths : ArrayList<String>) : ViewModel(),CoroutineScope {
 
     // var allImageList: MutableList<String> = mutableListOf()
     var adapter: ChooseDesignCategoryImageAdapter = ChooseDesignCategoryImageAdapter()
@@ -29,9 +29,8 @@ class ChooseDesignCategoryViewModel(imagePaths:ArrayList<String>) : ViewModel(),
     init {
 
         jobTracker = Job()
-        adapter.updateGalleryList(imagePaths)
-        categoryListAdapter.updateGalleryList(category_list)
-        Log.d("img_selected_size",imagePaths.size.toString())
+
+
     }
 
 
@@ -48,6 +47,11 @@ class ChooseDesignCategoryViewModel(imagePaths:ArrayList<String>) : ViewModel(),
          App.categoryItems.forEach {
              category_list.add(it)
         }
+
+        adapter.updateGalleryList(imagePaths)
+        categoryListAdapter.updateGalleryList(category_list)
+
+        Log.d("img_selected_size",imagePaths.size.toString())
 
     }
 

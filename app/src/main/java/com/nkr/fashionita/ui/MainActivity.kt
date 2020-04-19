@@ -347,4 +347,10 @@ class MainActivity : BaseActivity(),OnConnectivityChangeListener {
     }
 
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        Log.d("result_uri","here")
+    }
+
 }

@@ -215,6 +215,7 @@ class UpdateProfileFragment : BaseFragment() {
             if (data != null) {
                 val contentURI = data.data
 
+                Log.d("content_uri",contentURI.toString())
 
                 CropImage.activity(contentURI!!)
                     .setGuidelines(CropImageView.Guidelines.ON)
@@ -233,22 +234,15 @@ class UpdateProfileFragment : BaseFragment() {
 
             if (resultCode == RESULT_OK) {
                 val resultUri = result.uri
-
-                Log.d("result_uri","result is ok")
-                //mDisplayImageBtn.setImageURI(resultUri)
-             //   binding.ivEditProfFmDp.setImageURI(resultUri)
-
                 viewModel.userImg.value = resultUri.toString()
 
                 val thumb_filePath = File(resultUri.path)
-
 
                 try {
                     val thumb_bitmap: Bitmap = Compressor(requireContext())
                         .setMaxHeight(200)
                         .setMaxWidth(200)
                         .compressToBitmap(thumb_filePath)
-
 
                     val baos = ByteArrayOutputStream()
                     thumb_bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)

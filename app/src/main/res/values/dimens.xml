@@ -131,6 +131,7 @@
     <dimen name="expanded_toolbar_height">200dp</dimen>
     <dimen name="textsize_large">20sp</dimen>
     <dimen name="textsize_Xmedium">16sp</dimen>
+    <dimen name="textsize_XXmedium">14sp</dimen>
     <dimen name="textsize_medium">18sp</dimen>
     <dimen name="textsize_small">12sp</dimen>
     <dimen name="textsize_xlarge">30sp</dimen>
@@ -147,6 +148,7 @@
 
 
     <dimen name="textsize_title">18sp</dimen>
+    <dimen name="drawable_icon_size">16dp</dimen>
 
 
 </resources>

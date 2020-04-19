@@ -1,6 +1,7 @@
 package com.nkr.fashionita.ui.login
 
 import androidx.lifecycle.MutableLiveData
+import com.google.firebase.iid.FirebaseInstanceId
 import com.nkr.fashionita.common.*
 import com.nkr.fashionita.common.ANTENNA_EMPTY
 import com.nkr.fashionita.common.LOGIN_ERROR
@@ -8,6 +9,7 @@ import com.nkr.fashionita.common.SIGN_IN
 import com.nkr.fashionita.model.LoginResult
 import com.nkr.fashionita.model.User
 import com.nkr.fashionita.repository.IUserRepository
+import com.nkr.fashionita.service.MyFirebaseMessagingService
 import com.nkr.fashionita.ui.fragment.account.FirestoreUtil.initCurrentUserIfFirstTime
 import kotlinx.coroutines.launch
 import kotlin.coroutines.CoroutineContext
@@ -102,6 +104,15 @@ class UserViewModel(val repo: IUserRepository, uiContext: CoroutineContext) : Ba
             if (createGoogleUserResult is Result.Value) {
                // getUser()
                 initCurrentUserIfFirstTime{
+
+                    FirebaseInstanceId.getInstance().instanceId
+                        .addOnSuccessListener { instanceIdResult ->
+                            val deviceToken = instanceIdResult.token
+
+                            MyFirebaseMessagingService.addTokenToFirestore(deviceToken)
+
+                        }
+
 
                     viewModelCallback?.newGoogleUser()
                 }

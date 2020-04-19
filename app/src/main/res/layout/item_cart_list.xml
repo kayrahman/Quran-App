@@ -39,7 +39,7 @@
             android:layout_height="80dp"
             android:background="@drawable/bg_off_white_rounded"
             android:scaleType="fitXY"
-            android:src="@drawable/women_casual"
+            app:srcCompat="@drawable/ic_bag_placeholder"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/checkbox"

@@ -28,7 +28,6 @@
             android:layout_height="@dimen/item_image_height"
             android:background="@drawable/bg_off_white_rounded"
             android:scaleType="fitXY"
-            android:src="@drawable/women_casual"
             app:layout_constraintBottom_toTopOf="@+id/ll_title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

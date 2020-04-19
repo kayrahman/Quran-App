@@ -26,7 +26,6 @@
             android:layout_height="200dp"
             android:scaleType="centerCrop"
             android:background="@drawable/bg_off_white_rounded"
-            android:src="@drawable/women_casual"
             firestoreImageUrl="@{viewModel.getImgUrl()}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

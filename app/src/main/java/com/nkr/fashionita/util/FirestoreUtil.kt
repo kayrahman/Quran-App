@@ -4,16 +4,16 @@ import android.util.Log
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
-import com.nkr.fashionita.model.App
+import com.nkr.fashionita.common.toUser
 import com.nkr.fashionita.model.BannerItem
+import com.nkr.fashionita.model.Product
 import com.nkr.fashionita.model.User
 import com.nkr.fashionita.repository.CartRepoImpl
 import com.nkr.fashionita.repository.FirebaseUserRepoImpl
-import com.nkr.fashionita.util.COLLECTION_CARTLIST
-import com.nkr.fashionita.util.COLLECTION_USERDATA
-import com.nkr.fashionita.util.COLLECTION_WISHLIST
+import com.nkr.fashionita.util.*
 
 
 object FirestoreUtil {
@@ -24,6 +24,11 @@ object FirestoreUtil {
     private val currentUserDocRef: DocumentReference
         get() = firestoreInstance.document("users/${FirebaseAuth.getInstance().currentUser?.uid
                 ?: throw NullPointerException("UID is null.")}")
+
+    private val userDataDocRef: DocumentReference
+        get() = firestoreInstance.document("users/${FirebaseAuth.getInstance().currentUser?.uid
+            ?: throw NullPointerException("UID is null.")}")
+
 
     private val chatChannelsCollectionRef = firestoreInstance.collection("chatChannels")
 
@@ -36,20 +41,23 @@ object FirestoreUtil {
 
                 val user =  FirebaseAuth.getInstance().currentUser
 
+
+
                 val newUser = User(
                     user?.uid.toString(),
                     user?.displayName ?: "",
                     user?.email?:"",
                     user?.photoUrl.toString()
-
                 )
                 currentUserDocRef.set(newUser).addOnSuccessListener {
 
                     val map = HashMap<String, Any>()
                     map["list_size"] = 0
 
+
                     currentUserDocRef.collection(COLLECTION_USERDATA).document(COLLECTION_CARTLIST).set(map)
                     currentUserDocRef.collection(COLLECTION_USERDATA).document(COLLECTION_WISHLIST).set(map)
+                    currentUserDocRef.collection(COLLECTION_USERDATA).document(COLLECTION_ORDER_LIST).set(map)
 
 
 
@@ -71,8 +79,8 @@ object FirestoreUtil {
 
                     currentUserDocRef.collection(COLLECTION_USERDATA).document(COLLECTION_CARTLIST).set(map)
                     currentUserDocRef.collection(COLLECTION_USERDATA).document(COLLECTION_WISHLIST).set(map)
-
-
+                    currentUserDocRef.collection(COLLECTION_USERDATA).document(
+                        COLLECTION_ORDER_HISTORY).set(map)
 
                     onComplete()
                 }
@@ -230,6 +238,9 @@ object FirestoreUtil {
                 .add(message)
     }
 
+     //endregion FCM*/
+
+
     //region FCM
     fun getFCMRegistrationTokens(onComplete: (tokens: MutableList<String>) -> Unit) {
         currentUserDocRef.get().addOnSuccessListener {
@@ -238,8 +249,56 @@ object FirestoreUtil {
         }
     }
 
+
+
     fun setFCMRegistrationTokens(registrationTokens: MutableList<String>) {
         currentUserDocRef.update(mapOf("registrationTokens" to registrationTokens))
     }
-    //endregion FCM*/
+
+    fun updateOrderHistory(prod : Product, onComplete: () -> Unit){
+        //update order collection and user order document
+
+        val user = getActiveUser()
+
+        val order_history_map = HashMap<String,Any>()
+        order_history_map["customer_uid"]= user?.uid.toString()
+        order_history_map["seller_uid"] = prod.creator
+        order_history_map["product_uid"] = prod.uid
+
+
+        val key =  firestoreInstance.collection(COLLECTION_ORDER_HISTORY)
+            .document().id
+
+        Log.d("key_order_list",key)
+
+
+        firestoreInstance.collection(COLLECTION_ORDER_HISTORY)
+            .document(key)
+            .set(order_history_map)
+            .addOnCompleteListener {
+                // update user_data/order_history/
+
+                val order_map = HashMap<String,Any>()
+                order_map[COLLECTION_ORDER_HISTORY] = FieldValue.arrayUnion(key)
+
+                currentUserDocRef
+                    .collection(COLLECTION_USERDATA)
+                    .document(COLLECTION_ORDER_LIST)
+                    .update(order_map)
+
+                onComplete
+            }
+
+
+
+    }
+
+
+    /**
+     * if currentUser != null, return true
+     */
+    private fun getActiveUser(): User? {
+        return FirebaseAuth.getInstance().currentUser?.toUser
+    }
+
 }

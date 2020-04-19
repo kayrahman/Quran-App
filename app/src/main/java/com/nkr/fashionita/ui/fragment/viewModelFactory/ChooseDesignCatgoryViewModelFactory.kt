@@ -19,12 +19,12 @@ package com.nkr.fashionita.ui.fragment.viewModelFactory
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.nkr.fashionita.ui.fragment.post.ChooseDesignCategoryViewModel
+import com.nkr.fashionita.ui.fragment.post.ChooseProductCategoryViewModel
 
 class ChooseDesignCatgoryViewModelFactory(private val imagePaths:ArrayList<String>) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(ChooseDesignCategoryViewModel::class.java)) {
-            return ChooseDesignCategoryViewModel(
+        if (modelClass.isAssignableFrom(ChooseProductCategoryViewModel::class.java)) {
+            return ChooseProductCategoryViewModel(
                 imagePaths
             ) as T
         }

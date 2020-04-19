@@ -3,28 +3,26 @@ package com.nkr.fashionita.ui.login.register
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
-
+import com.google.firebase.iid.FirebaseInstanceId
 import com.nkr.fashionita.R
 import com.nkr.fashionita.base.BaseFragment
 import com.nkr.fashionita.model.User
+import com.nkr.fashionita.service.MyFirebaseMessagingService
 import com.nkr.fashionita.ui.MainActivity
 import com.nkr.fashionita.ui.fragment.account.FirestoreUtil
-import com.nkr.fashionita.ui.login.LoginEvent
-import com.nkr.fashionita.ui.login.LoginView
 import com.nkr.fashionita.ui.login.UserViewModel
 import com.wiseassblog.jetpacknotesmvvmkotlin.login.buildlogic.LoginInjector
-import kotlinx.android.synthetic.main.fragment_login.*
 import kotlinx.android.synthetic.main.fragment_register.*
-import kotlinx.android.synthetic.main.fragment_register.btn_fm_register
+
 
 
 /**
@@ -40,9 +38,6 @@ class RegisterFragment : BaseFragment() {
                 }
             }
     }
-
-
-
 
 
     private lateinit var viewModel: UserViewModel
@@ -122,6 +117,14 @@ class RegisterFragment : BaseFragment() {
                     val user = User(uid,username,email,"","")
 
                     FirestoreUtil.initCurrentUserIfFirstTimeEmailPassword(user){
+
+                        FirebaseInstanceId.getInstance().instanceId
+                            .addOnSuccessListener { instanceIdResult ->
+                                val deviceToken = instanceIdResult.token
+
+                                MyFirebaseMessagingService.addTokenToFirestore(deviceToken)
+
+                            }
 
 
                         startActivity(Intent(requireContext(), MainActivity::class.java))

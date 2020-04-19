@@ -73,7 +73,7 @@
             android:layout_marginTop="16dp"
             android:text="@{viewModel.prodName}"
             app:layout_constraintStart_toStartOf="parent"
-            android:textSize="@dimen/textsize_large"
+            android:textSize="@dimen/textsize_medium"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Google plus"
 
@@ -101,7 +101,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="4.5"
-                    android:textSize="@dimen/textsize_medium"
+                    android:textSize="@dimen/textsize_XXmedium"
                     android:layout_gravity="center"
                     android:fontFamily="@font/poppins_bold"
                     android:textColor="@color/colorWhite"
@@ -122,7 +122,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Total Ratings"
-                android:textSize="@dimen/text_16sp"
+                android:textSize="@dimen/textsize_XXmedium"
                 android:layout_gravity="center"
                 android:fontFamily="@font/poppins_bold"
                 android:layout_marginLeft="@dimen/space8dp"
@@ -141,7 +141,7 @@
                 android:layout_height="wrap_content"
                 android:text="@{viewModel.product.price}"
                 android:textColor="@color/colorBlack"
-                android:textSize="@dimen/textsize_xlarge"
+                android:textSize="@dimen/textsize_large"
                 android:fontFamily="@font/poppins_bold"
                 app:layout_constraintTop_toBottomOf="@id/ll_rating"
                 app:layout_constraintStart_toStartOf="parent"
@@ -157,13 +157,13 @@
             android:layout_marginLeft="@dimen/space8dp"
             android:fontFamily="@font/poppins"
             android:text="Tk.380"
-            android:textSize="@dimen/textsize_large"
+            android:textSize="@dimen/textsize_XXmedium"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tv_prod_price" />
 
         <View
             android:id="@+id/divider"
-            android:layout_width="100dp"
+            android:layout_width="80dp"
             android:layout_height="1dp"
             android:layout_weight="1"
             android:background="@color/colorBlack"
@@ -195,21 +195,24 @@
             android:text="Getting This" />
 
 
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/delivery"
             android:drawablePadding="@dimen/spaceSmall"
             android:text="Mailing &amp; Delivery"
-            android:textSize="@dimen/textsize_medium" />
+            android:textSize="@dimen/textsize_XXmedium"
+            android:fontFamily="@font/poppins_bold"
+            />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spaceSmall"
             android:text="Free Postage"
-            android:textSize="@dimen/textsize_medium" />
+            android:textSize="@dimen/textsize_XXmedium"
+            android:fontFamily="@font/poppins_bold"
+            />
 
 
         <TextView

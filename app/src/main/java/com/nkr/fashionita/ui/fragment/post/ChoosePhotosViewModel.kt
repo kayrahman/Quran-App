@@ -40,6 +40,8 @@ class ChoosePhotosViewModel : ViewModel() {
         cursor = activity.contentResolver.query(uri, projection, null, null, orderBy)
 //        cursor = activity.contentResolver.query(uri, projection, null, null, null)
 
+        Log.d("uri_string",uri.toString())
+
         columnIndexData = cursor!!.getColumnIndexOrThrow(MediaStore.MediaColumns.DATA)
         columnIndexFolderName = cursor
             .getColumnIndexOrThrow(MediaStore.Images.Media.BUCKET_DISPLAY_NAME)

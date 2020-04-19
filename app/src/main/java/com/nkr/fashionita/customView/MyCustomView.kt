@@ -174,7 +174,7 @@ class MyCustomView @JvmOverloads constructor(context: Context, attrs: AttributeS
 
     override fun onDraw(canvas: Canvas) {
         drawBitmap(canvas)
-      //  drawStroke(canvas)
+        drawStroke(canvas)
        // drawHighlight(canvas)
     }
 
@@ -251,12 +251,11 @@ class MyCustomView @JvmOverloads constructor(context: Context, attrs: AttributeS
             scale = mBitmapDrawBounds.width() / mBitmap!!.width.toFloat()
 
             //scale = 0f
-
             //dx = mBitmapDrawBounds.left
-            dx= 10f
-            dy = 10f
-               // mBitmapDrawBounds.top - mBitmap!!.height * scale / 2f + mBitmapDrawBounds.width() / 2f
-              //  mBitmapDrawBounds.top - mBitmap!!.height * scale / 2f + mBitmapDrawBounds.width() / 2f
+          //  dx= 10f
+          //  dy = 10f
+              dx =  mBitmapDrawBounds.top - mBitmap!!.height * scale / 2f + mBitmapDrawBounds.width() / 2f
+               dy =  mBitmapDrawBounds.top - mBitmap!!.height * scale / 2f + mBitmapDrawBounds.width() / 2f
 
 
         } else {

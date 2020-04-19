@@ -2,16 +2,12 @@ package com.nkr.fashionita.ui.adapter
 
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.nkr.fashionita.R
 import com.nkr.fashionita.databinding.ItemChosenImagesBinding
-import com.nkr.fashionita.databinding.ItemGalleryBinding
 import com.nkr.fashionita.ui.adapter.viewModel.ChosenDesignImageViewModel
-import com.nkr.fashionita.ui.adapter.viewModel.GalleryGridImageViewModel
 
 
 /**
@@ -21,7 +17,7 @@ import com.nkr.fashionita.ui.adapter.viewModel.GalleryGridImageViewModel
 class ChooseDesignCategoryImageAdapter :
     RecyclerView.Adapter<ChooseDesignCategoryImageAdapter.MyViewHolder>() {
 
-    private var galleryObjectList: List<String>? = null
+    private var galleryObjectList = mutableListOf<String>()
         set(value) {
             field = value
             notifyDataSetChanged()
@@ -39,11 +35,41 @@ class ChooseDesignCategoryImageAdapter :
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         var path = galleryObjectList!![position]
         holder.bind(path)
-
         holder.binding.ivGallery.setOnClickListener {
-            // itemClick(holder)
+            listener.onItemClick(position,path)
         }
     }
+
+
+    //bind view holder with payload
+
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int, payloads: MutableList<Any>) {
+        if(payloads.isNotEmpty()){
+           var newPath = payloads[0]
+            galleryObjectList[position] = newPath as String
+            holder.bind(newPath.toString())
+
+            holder.binding.ivGallery.setOnClickListener {
+                listener.onItemClick(position,newPath)
+            }
+
+
+            Log.d("choose_photo_payload","true")
+
+        }else{
+
+            var path = galleryObjectList!![position]
+            holder.bind(path)
+            holder.binding.ivGallery.setOnClickListener {
+                listener.onItemClick(position,path)
+            }
+
+            Log.d("choose_photo_payload","false")
+        }
+
+    }
+
+
 
     override fun getItemCount(): Int {
 
@@ -53,7 +79,8 @@ class ChooseDesignCategoryImageAdapter :
 
 
     fun updateGalleryList(galleryList: List<String>) {
-        this.galleryObjectList = galleryList
+        this.galleryObjectList = galleryList as MutableList<String>
+
 
     }
 
@@ -78,7 +105,7 @@ class ChooseDesignCategoryImageAdapter :
 
     interface AdapterListener {
         fun errorToast(msg: String)
-        fun onItemClick(size: Int)
+        fun onItemClick(position: Int,size: String)
     }
 
 }

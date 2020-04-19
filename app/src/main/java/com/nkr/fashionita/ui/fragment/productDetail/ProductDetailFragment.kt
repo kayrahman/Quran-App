@@ -23,6 +23,7 @@ import com.nkr.fashionita.model.App
 import com.nkr.fashionita.note.notelist.buildlogic.ProductDetailItemListInjector
 import com.nkr.fashionita.ui.MainActivity
 import com.nkr.fashionita.ui.adapter.ProductImagesAdapter
+import com.nkr.fashionita.ui.fragment.checkoutFragment.CheckOutFragment
 import kotlinx.android.synthetic.main.product_images_layout.*
 import kotlinx.android.synthetic.main.product_images_layout.view.*
 import org.jetbrains.anko.windowManager
@@ -32,12 +33,12 @@ class ProductDetailFragment : BaseFragment() {
 
 
     companion object {
-        fun newInstance(position: String) =
+        fun newInstance() =
             ProductDetailFragment().apply {
-                arguments = Bundle().apply {
-                    putString(KEY_CURRENT_PRODUCT_POSITION, position)
+              /*  arguments = Bundle().apply {
+                    putString(KEY_CURRENT_PRODUCT_POSITION, position)*/
                 }
-            }
+
 
     }
 
@@ -148,6 +149,26 @@ class ProductDetailFragment : BaseFragment() {
 
         binding.btnAcProdDetailAddToCart.setOnClickListener {
             viewModel.handleEvent(ProductDetailEvent.OnAddToCartBtnClick(prod_uid.toString()))
+
+        }
+
+        binding.btnAcProdDetailBuyNow.setOnClickListener {
+
+            // go to check out fragment
+
+            val checkout_fagment = CheckOutFragment.newInstance()
+            checkout_fagment.fragmentCallBack = object : CheckOutFragment.FragmentCallBack{
+                override fun goTo(fragment: Fragment) {
+                    fragmentCallBack.goTo(fragment)
+                }
+
+                override fun goBack() {
+                    fragmentCallBack.goBack()
+                }
+
+            }
+
+            fragmentCallBack.goTo(checkout_fagment)
 
         }
 

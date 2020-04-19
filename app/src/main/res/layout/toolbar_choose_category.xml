@@ -9,7 +9,7 @@
 
         <variable
             name="viewModel"
-            type="com.nkr.fashionita.ui.fragment.post.ChooseDesignCategoryViewModel" />
+            type="com.nkr.fashionita.ui.fragment.post.ChooseProductCategoryViewModel" />
     </data>
 
     <androidx.appcompat.widget.Toolbar

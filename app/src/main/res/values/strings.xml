@@ -41,6 +41,17 @@
     <string name="label_share">Share</string>
     <string name="search_category">Search for a category</string>
     <string name="text_acc_info_update">Updating your info</string>
+    <string name="checkout">Checkout</string>
+    <string name="proceed_to_pay">Proceed To Pay</string>
+    <string name="fcm_message">FCM Message</string>
+    <string name="default_notification_channel_id">fcm_default_channel</string>
+    <string name="choose_payment_method">Choose Payment Method</string>
+    <string name="debit_credit">Credit/Debit Card</string>
+    <string name="cash_on_delivery">Cash On Delivery</string>
+    <string name="payment_method">Payment Methods</string>
+    <string name="payment_method_name">Bkash Online Payment</string>
+    <string name="place_order">Place Order</string>
+    <string name="bkash_payment">Bkash</string>
 
 
 </resources>

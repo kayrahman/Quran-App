@@ -23,6 +23,7 @@ import com.nkr.fashionita.ui.Item.notelist.NoteListEvent
 import com.nkr.fashionita.ui.fragment.productDetail.ProductDetailActivity
 import com.nkr.fashionita.ui.adapter.homeTab.CategoryImageListAdapter
 import com.nkr.fashionita.ui.adapter.homeTab.FreshFindsGridAdapter
+import com.nkr.fashionita.ui.fragment.account.FirestoreUtil
 import com.nkr.fashionita.ui.fragment.cart.CartFragment
 import com.nkr.fashionita.ui.fragment.categoryDetail.CategoryDetailFragment
 import com.nkr.fashionita.ui.fragment.search.SearchResultFragment
