@@ -11,15 +11,14 @@
         <item name="android:windowBackground">@color/colorPrimary</item>
 
 
-
     </style>
 
     <!--base application theme without action bar-->
     <style name="AppTheme.NoActionBar" parent="@style/AppTheme">
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
-        <item name="android:textColorHint">@color/colorHintText</item>
-        <item name="android:windowBackground">@drawable/splash_screen</item>
+        <item name="android:textColor">@color/colorTextBlack</item>
+
     </style>
 
 

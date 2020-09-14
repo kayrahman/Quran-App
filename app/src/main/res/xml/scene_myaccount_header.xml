@@ -75,7 +75,6 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:textColor="@color/colorBlack"
             motion:layout_constraintBottom_toBottomOf="parent"
             motion:layout_constraintStart_toEndOf="@id/iv_dp" />
 
@@ -91,7 +90,6 @@
             motion:layout_constraintStart_toStartOf="parent" />
 
         <Constraint
-            android:id="@id/setting_image"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginTop="8dp"

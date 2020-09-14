@@ -6,12 +6,12 @@
             app:startDestination="@id/noteListView">
 
 
-    <activity android:id="@+id/loginView" android:name="com.nkr.fashionita.ui.login.LoginActivity"
+    <activity android:id="@+id/loginView" android:name="com.nkr.quran.framework.presentation.ui.login.LoginActivity"
               android:label="activity_login" tools:layout="@layout/fragment_login"
 
         />
     <fragment android:id="@+id/noteDetailView"
-              android:name="com.nkr.fashionita.ui.Item.notedetail.NoteDetailView"
+              android:name="com.nkr.quran.framework.presentation.ui.Item.notedetail.NoteDetailView"
               android:label="NoteDetailView"
               tools:layout="@layout/fragment_note_detail"
     >
@@ -19,7 +19,7 @@
         <argument android:name="noteId" app:argType="string" android:defaultValue='""'/>
     </fragment>
     <fragment android:id="@+id/noteListView"
-              android:name="com.nkr.fashionita.ui.Item.notelist.NoteListView"
+              android:name="com.nkr.quran.framework.presentation.ui.Item.notelist.NoteListView"
               android:label="NoteListView"
               tools:layout="@layout/fragment_note_list"
     >

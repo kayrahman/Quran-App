@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Meyeti</string>
+    <string name="app_name">Memorize Quran </string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
@@ -13,7 +13,7 @@
     <string name="text_loading">Please wait.Your account is being created...</string>
     <string name="long_text">In this blog, we learned how to use Coordinator Layout in our application. Coordinator Layout is used to manage the transactions and animation of various views present in an Activity. Before Coordinator Layout, Frame Layout was used, but using more than one views in Frame Layout results in overlapping of views over one another. At the end of the blog, we did some examples to have a clear understanding. Hope you enjoyed the blog.</string>
     <string name="tequila_title">Title</string>
-    <string name="hint_search">Search Meyeti</string>
+    <string name="hint_search">Search BazarAno</string>
     <string name="tequila_name">Katherine</string>
     <string name="tequila_tagline">Student</string>
     <string name="saved_search">Saved Searches</string>
@@ -49,9 +49,23 @@
     <string name="debit_credit">Credit/Debit Card</string>
     <string name="cash_on_delivery">Cash On Delivery</string>
     <string name="payment_method">Payment Methods</string>
-    <string name="payment_method_name">Bkash Online Payment</string>
+    <string name="payment_method_name">Cash On Delivery</string>
     <string name="place_order">Place Order</string>
     <string name="bkash_payment">Bkash</string>
+    <string name="add_address">+ Add Address</string>
+    <string name="add_new_address">Add New address</string>
+    <string name="empty_field_error">Do not leave fields empty</string>
+    <string name="qty">Qty</string>
+    <string name="cash_payment">You can pay in cash to our courier when you recieve the goods at your doorstep.</string>
+    <string name="order_rcvd">Order Received</string>
+    <string name="string_to_pay">To pay</string>
+    <string name="string_to_review">To Review</string>
+    <string name="string_cancellation">Cancellation</string>
+    <string name="label_order">Orders</string>
+    <string name="label_dashboard">Dashboard</string>
+    <string name="label_upload_request">New upload request</string>
+    <string name="label_delivery">Delivery</string>
+    <string name="label_crud">CRUD</string>
 
 
 </resources>

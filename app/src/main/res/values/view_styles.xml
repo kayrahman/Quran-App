@@ -18,7 +18,7 @@
         <item name="android:fontFamily">@font/poppins_bold</item>
         <item name="android:textSize">24sp</item>
         <item name="android:gravity">center</item>
-        <item name="android:textColor">@color/colorOrangeOne</item>
+        <item name="android:textColor">@color/colorAccent</item>
     </style>
 
     <style name="Text.Primary.LoginHeader.Sub">
@@ -37,14 +37,14 @@
     <style name="TextTitle" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
         <item name="android:fontFamily">sans-serif-light</item>
         <item name="android:textSize">16dp</item>
-        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textColor">@color/colorTextBlack</item>
         <item name="android:layout_margin">@dimen/spaceNormal</item>
     </style>
 
     <style name="Text.Sub">
-        <item name="android:fontFamily">@font/poppins_bold</item>
-        <item name="android:textSize">@dimen/normalTextSize</item>
-        <item name="android:textColor">@color/colorTextDarkGray</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">@dimen/smallTextSize</item>
+        <item name="android:textColor">@color/colorTextBlack</item>
         <item name="android:layout_gravity">center</item>
         <item name="android:gravity">start</item>
 
@@ -55,7 +55,7 @@
     <style name="Text.title_header">
         <item name="android:fontFamily">@font/poppins_bold</item>
         <item name="android:textSize">@dimen/largeTextSize</item>
-        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textColor">@color/colorTextBlack</item>
         <item name="android:layout_gravity">start</item>
         <item name="android:layout_marginTop">@dimen/spaceNormal</item>
         <item name="android:layout_marginBottom">@dimen/spaceNormal</item>
@@ -66,7 +66,7 @@
     <style name="edittext" parent="Widget.AppCompat.EditText">
         <item name="android:fontFamily">@font/poppins</item>
         <item name="android:textSize">@dimen/textsize_small</item>
-        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textColor">@color/colorTextBlack</item>
 
 
     </style>
@@ -77,6 +77,23 @@
         <item name="textAllCaps">true</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:textStyle">normal</item>
+    </style>
+
+
+    <style name="crudTvAppearance" >
+        <item name="android:textAlignment">center</item>
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+
+
+    <style name="LoginTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <!-- <item name="boxStrokeColor">#fff</item>-->
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="boxStrokeColor">@color/colorIdleGray</item>
+        <item name="hintTextColor">?attr/colorOnSurface</item>
     </style>
 
 

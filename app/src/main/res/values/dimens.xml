@@ -143,8 +143,8 @@
     <dimen name="space8dp">8dp</dimen>
     <dimen name="space2dp">2dp</dimen>
     <dimen name="setting_fm_icon_size">30dp</dimen>
-    <dimen name="item_image_height">150dp</dimen>
-    <dimen name="item_image_width">150dp</dimen>
+    <dimen name="item_image_height">100dp</dimen>
+    <dimen name="item_image_width">100dp</dimen>
 
 
     <dimen name="textsize_title">18sp</dimen>
