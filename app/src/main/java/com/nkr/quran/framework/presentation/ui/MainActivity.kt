@@ -21,11 +21,8 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : BaseActivity(),OnConnectivityChangeListener {
 
 
-   // lateinit var mAuth: FirebaseAuth
-  //  lateinit var mListener: FirebaseAuth.AuthStateListener
-
     internal var mConnectivityBroadcastReciever = ConnectivityBroadcastReciever()
-   // internal var mNetworkErrorLottieAnimation: LottieAnimationView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -74,8 +71,6 @@ class MainActivity : BaseActivity(),OnConnectivityChangeListener {
         val connectivityIntentFilter = IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION)
         registerReceiver(mConnectivityBroadcastReciever, connectivityIntentFilter)
 
-//        mAuth.addAuthStateListener(mListener)
-        
     }
 
     override fun onStop() {
