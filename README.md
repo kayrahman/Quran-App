@@ -6,3 +6,17 @@ MMVM, Dagger Hilt,Databinding, Retrofit,Coroutine
 Media sessions are an integral link between the Android platform and media apps. Not only does it inform Android that media is playing—so that it can forward media actions into the correct session—but it also informs the platform what is playing and how it can be controlled.
 
 
+## What is Synchronization?
+In a multi-threaded world, we need to access shared objects across threads, and If we do not synchronize our work, unwanted situations can occur.
+
+### Volatile :
+Volatile fields provide memory visibility and guarantee that the value that is being read, comes from the main memory and not the cpu-cache, so the value in cpu-cache is always considered to be dirty, and It has to be fetched again.
+### synchronized :
+There are two types of synchronization available in Java (and Kotlin). Synchronized methods and synchronized statements.
+To understand synchronized methods (denoted by the synchronized function modifier keyword in Java and @Synchronized annotation in Kotlin).
+In a room scenario, Synchronized resembles a lock on the door that has only one key, that people need to use to open the door and lock it. So when one person (thread) goes in, they can use the key to lock the door, and since no one else has the key, they cannot go in until the key is returned to them by the original person. This is exactly what synchronized does in Java and Kotlin.
+
+
+
+
+
