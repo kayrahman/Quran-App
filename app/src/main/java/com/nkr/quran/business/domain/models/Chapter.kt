@@ -18,8 +18,12 @@ data class Chapter(val id:Int,
                    ){
 
 
-    public fun revelationNverseCount():String{
-        return "$revelation_place - $verses_count"
+    fun getId():String{
+        return id.toString()
+    }
+
+     fun revelationNverseCount():String{
+        return "$revelation_place - $verses_count verses"
     }
 
 }
