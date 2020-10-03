@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#13104b</color>
+    <color name="colorPrimary">#fefffe</color>
     <color name="colorPrimaryDark">#0c0a35</color>
-    <color name="colorAccent">#facf8b</color>
+    <color name="colorAccent">#08FF04</color>
+
+    <color name="darkBackground">#202020</color>
 
 
     <color name="colorWhite">#fefffe</color>
@@ -12,6 +14,19 @@
 
     <color name="colorIdleGray">#BFBFBF</color>
     <color name="colorLimeGreen">#56b02b</color>
+
+
+    <color name="colorPurple">#431AA1</color>
+    <color name="colorOffWhite">#FAF8FC</color>  <!-- use this one as gray text color-->
+    <color name="colorPurpleDark">#2E0D8A</color> <!-- use this one as dark text color-->
+    <color name="colorPurpleLight">#9345F2</color>
+    <color name="colorPurpleLighter">#B9A2D8</color>
+    <color name="colorPurpleDarker">#260F68</color>
+    <color name="colorPurpleAccent">#E6704A</color>
+    <color name="colorCyan">#66ddf5</color>
+    <color name="colorTextGray">#a4a5b8</color>
+    <color name="colorTextPurple">#301e58</color>
+
 
 
 </resources>

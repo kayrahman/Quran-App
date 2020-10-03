@@ -15,4 +15,11 @@ data class Chapter(val id:Int,
                    val name_arabic:String,
                    val name_simple:String,
                    val verses_count:Int
-                   )
+                   ){
+
+
+    public fun revelationNverseCount():String{
+        return "$revelation_place - $verses_count"
+    }
+
+}

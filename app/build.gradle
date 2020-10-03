@@ -222,9 +222,9 @@ dependencies {
 
 
     // ExoPlayer
-    api "com.google.android.exoplayer:exoplayer-core:2.11.8"
-    api "com.google.android.exoplayer:exoplayer-ui:2.11.8"
-    api "com.google.android.exoplayer:extension-mediasession:2.11.8"
+    implementation "com.google.android.exoplayer:exoplayer-core:2.11.8"
+    implementation "com.google.android.exoplayer:exoplayer-ui:2.11.8"
+    implementation "com.google.android.exoplayer:extension-mediasession:2.11.8"
 
 
     testImplementation 'junit:junit:4.13'
