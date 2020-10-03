@@ -20,8 +20,12 @@ Player Notification Manager will use this adapter to get information about the c
 
 
 ### MediaItems: 
+In ExoPlayer every piece of media is represented by a MediaItem. To play a piece of media you need to build a corresponding MediaItem, add it to the player, prepare the player, and call play to start the playback.
+
 
 ### Notification Listener :
+
+## Media Session and Media Browser Service are used to expose the controls to external applications such as Google assistant, Remote Controls, Android Auto, WearOs.
 
 
 
