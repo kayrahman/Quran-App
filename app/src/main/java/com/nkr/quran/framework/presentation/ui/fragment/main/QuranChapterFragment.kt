@@ -8,9 +8,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
-import com.nkr.quran.R
 import com.nkr.quran.databinding.QuranChapterFragmentBinding
 import com.nkr.quran.framework.presentation.ui.adapter.QuranChapterListAdapter
+import com.nkr.quran.framework.presentation.ui.viewModel.QuranChapterViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

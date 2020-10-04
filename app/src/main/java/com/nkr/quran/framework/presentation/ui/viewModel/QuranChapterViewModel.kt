@@ -1,4 +1,4 @@
-package com.nkr.quran.framework.presentation.ui.fragment.main
+package com.nkr.quran.framework.presentation.ui.viewModel
 
 import android.util.Log
 import androidx.hilt.Assisted

@@ -126,6 +126,8 @@
 
 
 
+
+
     <dimen name="image_final_width">32dp</dimen>
     <dimen name="spacing_normal">16dp</dimen>
     <dimen name="expanded_toolbar_height">200dp</dimen>
@@ -172,5 +174,7 @@
     <!-- minimum height of plant detail page so that the collapsing toolbar can be shown on every page -->
     <dimen name="plant_description_min_height">555dp</dimen>
 
+
+    <dimen name="listItemIconSize">30dp</dimen>
 
 </resources>

@@ -18,12 +18,14 @@ data class Chapter(val id:Int,
                    ){
 
 
-    fun getId():String{
-        return id.toString()
-    }
+    var surahNum : String
+    get() = id.toString()
+    set(value){}
 
-     fun revelationNverseCount():String{
-        return "$revelation_place - $verses_count verses"
-    }
+    var surahVerseNplace : String
+    get() = "$revelation_place - $verses_count verses"
+        set(value) {}
+
+
 
 }

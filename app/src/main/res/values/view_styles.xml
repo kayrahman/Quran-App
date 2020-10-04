@@ -48,9 +48,31 @@
         <item name="android:layout_gravity">center</item>
         <item name="android:gravity">start</item>
 
+    </style>
 
+    <style name="Text.Toolbar">
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">start</item>
 
     </style>
+
+    <style name="Text.SurahTitle">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">@dimen/textsize_large</item>
+
+    </style>
+
+    <style name="Text.ToolbarTitle">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">@dimen/textsize_large</item>
+        <item name="android:textColor">@color/colorPurpleLight</item>
+        <item name="android:layout_marginStart">@dimen/spaceNormal</item>
+
+    </style>
+
+
+
 
     <style name="Text.title_header">
         <item name="android:fontFamily">@font/poppins_bold</item>
