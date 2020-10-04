@@ -2,6 +2,48 @@
 MMVM, Dagger Hilt,Databinding, Retrofit,Coroutine
 
 
+https://codelabs.developers.google.com/android-kotlin-fundamentals/
+
+## Jetpack Navigation :
+
+> Navigation Graph
+> NavHostFragment
+> NavController
+
+app:startDestination is an attribute that specifies the destination that is launched by default when the user first opens the app.
+
+<LinearLayout
+    .../>
+    <androidx.appcompat.widget.Toolbar
+        .../>
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/my_nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:navGraph="@navigation/mobile_navigation"
+        app:defaultNavHost="true"
+        />
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        .../>
+</LinearLayout>
+
+android:name="androidx.navigation.fragment.NavHostFragment" and app:defaultNavHost="true" connect the system back button to the NavHostFragment
+app:navGraph="@navigation/mobile_navigation" associates the NavHostFragment with a navigation graph. This navigation graph specifies all the destinations the user can navigate to, in this NavHostFragment.
+
+
+## NavController :
+
+when a user does something like clicking a button, you need to trigger a navigate command. A special class called the NavController is what triggers the fragment swaps in the NavHostFragment.
+
+// Command to navigate to flow_step_one_dest
+findNavController().navigate(R.id.flow_step_one_dest)
+
+Note that you pass in either a destination or action ID to navigate. These are the IDs defined in the navigation graph XML. This is an example of passing in a destination ID.
+
+
+
 ## Controlling media through MediaSession:
 Media sessions are an integral link between the Android platform and media apps. Not only does it inform Android that media is playing—so that it can forward media actions into the correct session—but it also informs the platform what is playing and how it can be controlled.
 
