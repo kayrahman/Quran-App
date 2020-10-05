@@ -1,8 +1,17 @@
-# memorize_quran
+# QuranApp
 MMVM, Dagger Hilt,Databinding, Retrofit,Coroutine
 
-
 https://codelabs.developers.google.com/android-kotlin-fundamentals/
+
+
+### Kotlin Flow:
+A flow is an asynchronous version of a Sequence, a type of collection whose values are lazily produced. Just like a sequence, a flow produces each value on-demand whenever the value is needed, and flows can contain an infinite number of values.
+
+Flow produces values one at a time (instead of all at once) that can generate values from async operations like network requests, database calls, or other async code. It supports coroutines throughout its API, so you can transform a flow using coroutines as well!
+
+We can build, transform, and consume a Flow using coroutines. You can also control concurrency, which means coordinating the execution of several coroutines declaratively with Flow.
+
+
 
 ## Jetpack Navigation :
 
