@@ -7,7 +7,7 @@ import com.google.gson.GsonBuilder
 import com.nkr.quran.business.common.EntityMapper
 import com.nkr.quran.business.domain.models.Chapter
 import com.nkr.quran.framework.datasource.network.IQuranApiService
-import com.nkr.quran.framework.datasource.network.QuranServiceImpl
+import com.nkr.quran.framework.datasource.network.QuranNetworkServiceImpl
 import com.nkr.quran.framework.datasource.network.mappers.NetworkMapper
 import com.nkr.quran.framework.datasource.network.model.ChapterNetworkEntity
 import com.nkr.quran.framework.datasource.network.retrofit.QuranRetrofitService
@@ -61,7 +61,7 @@ object NetworkModule {
     fun provideRetrofitService(
         quranRetrofitService: QuranRetrofitService
     ): IQuranApiService{
-        return QuranServiceImpl(quranRetrofitService)
+        return QuranNetworkServiceImpl(quranRetrofitService)
     }
 
 

@@ -2,7 +2,7 @@ package com.nkr.quran.di
 
 import com.codingwithmitch.daggerhiltplayground.business.data.network.INetworkDataSource
 import com.nkr.quran.business.data.cache.IChapterCacheDataSource
-import com.nkr.quran.business.interactors.QuranInfo
+import com.nkr.quran.business.interactors.QuranInfoRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -19,8 +19,8 @@ object InteractorsModule {
         networkDataSource: INetworkDataSource,
         cacheDataSource: IChapterCacheDataSource
 
-    ): QuranInfo{
-        return QuranInfo(networkDataSource,cacheDataSource)
+    ): QuranInfoRepository{
+        return QuranInfoRepository(networkDataSource,cacheDataSource)
     }
 }
 
