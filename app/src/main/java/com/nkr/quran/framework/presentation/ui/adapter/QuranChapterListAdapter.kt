@@ -1,7 +1,10 @@
 package com.nkr.quran.framework.presentation.ui.adapter
 
+import android.animation.ObjectAnimator
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AccelerateInterpolator
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -20,6 +23,13 @@ class QuranChapterListAdapter:ListAdapter<Chapter,RecyclerView.ViewHolder>(Quran
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val chapter = getItem(position)
         (holder as QuranChapterViewHolder).bind(chapter)
+
+        //enter
+        val enter = ObjectAnimator.ofFloat(holder.itemView, View.TRANSLATION_X,-300f,0f)
+        enter.duration = 500
+        enter.interpolator = AccelerateInterpolator(1f)
+        enter.start()
+
     }
 
 }

@@ -60,6 +60,7 @@
     <style name="Text.SurahTitle">
         <item name="android:fontFamily">@font/poppins_bold</item>
         <item name="android:textSize">@dimen/textsize_large</item>
+        <item name="android:textColor">@color/colorOffWhite</item>
 
     </style>
 

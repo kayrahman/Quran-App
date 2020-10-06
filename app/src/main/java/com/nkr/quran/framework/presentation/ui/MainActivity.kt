@@ -28,42 +28,16 @@ class MainActivity : BaseActivity(),OnConnectivityChangeListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-
-
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_nav, QuranChapterFragment::class.java, null)
-            .commit()
-
-
-
       /*
 
         uiHelper.setStatusBarTransparent()
 
-        initBottomNavigation()
-
-        setupListener()*/
+       */
 
 
     }
 
 
-    override fun onBackPressed() {
-        super.onBackPressed()
-
-
-        val count = supportFragmentManager.backStackEntryCount
-
-        Log.d("backstack_count",count.toString())
-
-        if (count == 0) {
-            super.onBackPressed()
-            //additional code
-        } else {
-           // supportFragmentManager.popBackStack()
-            fragmentManager.popBackStackImmediate()
-        }
-    }
 
     override fun onStart() {
         super.onStart()
@@ -78,28 +52,6 @@ class MainActivity : BaseActivity(),OnConnectivityChangeListener {
 
         unregisterReceiver(mConnectivityBroadcastReciever)
 
-    }
-    private fun initBottomNavigation() {
-
-        navigationView.setOnNavigationItemSelectedListener { item ->
-            when (item.itemId) {
-
-            }
-            false
-        }
-
-        navigationView.selectedItemId = R.id.item_dashboard
-
-    }
-
-
-
-
-    private fun replaceFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_nav, fragment)
-            .addToBackStack("parent")
-            .commit()
     }
 
 
