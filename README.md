@@ -1,5 +1,5 @@
 # QuranApp
-MMVM, Dagger Hilt,Databinding, Retrofit,Coroutine
+Clean Architecture,MMVM/MVI, Dagger Hilt,Databinding, Retrofit,Coroutine, coroutine flow
 
 https://codelabs.developers.google.com/android-kotlin-fundamentals/
 
