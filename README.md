@@ -1,6 +1,9 @@
 # QuranApp
 Clean Architecture,MMVM/MVI, Dagger Hilt,Databinding, Retrofit,Coroutine, coroutine flow
 
+Data is fetched from the API below :
+https://quran.api-docs.io/v3/
+
 https://codelabs.developers.google.com/android-kotlin-fundamentals/
 
 
