@@ -6,6 +6,7 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
 import com.codingwithmitch.daggerhiltplayground.business.domain.state.DataState
 import com.nkr.quran.business.domain.models.Chapter
+import com.nkr.quran.business.domain.models.Verse
 import com.nkr.quran.business.interactors.QuranInfoRepository
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -21,6 +22,7 @@ constructor(private val quranInfoRepo: QuranInfoRepository,
 
 
     val chapterList = MutableLiveData<List<Chapter>>()
+    val verseList = MutableLiveData<List<Verse>>()
 
     fun getQuranChapters() {
         viewModelScope.launch {
@@ -41,11 +43,9 @@ constructor(private val quranInfoRepo: QuranInfoRepository,
 
     fun getVersesByChapterNumber(){
         viewModelScope.launch {
-          val response =  quranInfoRepo.getVersesByChapterNumber("1")
-            Log.d("verses",response.verses.toString())
+          val response =  quranInfoRepo.getVersesByChapterNumber("1","21","bn")
+            verseList.value = response
         }
     }
-
-
 
 }

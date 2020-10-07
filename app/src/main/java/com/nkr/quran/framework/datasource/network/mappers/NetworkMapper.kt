@@ -3,10 +3,11 @@ package com.nkr.quran.framework.datasource.network.mappers
 
 import com.nkr.quran.business.common.EntityMapper
 import com.nkr.quran.business.domain.models.Chapter
-import com.nkr.quran.business.domain.models.Chapters
 import com.nkr.quran.business.domain.models.Verse
+import com.nkr.quran.business.domain.models.VerseTranslation
 import com.nkr.quran.framework.datasource.network.model.ChapterNetworkEntity
 import com.nkr.quran.framework.datasource.network.model.ChaptersNetworkEntity
+import com.nkr.quran.framework.datasource.network.model.TranslationEntity
 import com.nkr.quran.framework.datasource.network.model.VerseEntity
 import javax.inject.Inject
 
@@ -55,9 +56,38 @@ constructor(): EntityMapper<ChapterNetworkEntity, Chapter> {
 
 
 
+
+class TranslationMapper
+@Inject
+constructor()
+    : EntityMapper<TranslationEntity,VerseTranslation>{
+    override fun mapFromEntity(entity: TranslationEntity): VerseTranslation {
+        return VerseTranslation(
+           // id = entity.id,
+            language_name = entity.language_name,
+          //  resource_name = entity.resource_name,
+          //  resource_id = entity.resource_id,
+            text = entity.text
+        )
+    }
+
+    override fun mapToEntity(domainModel: VerseTranslation): TranslationEntity {
+        return TranslationEntity(
+           // id = domainModel.id,
+            language_name = domainModel.language_name,
+          //  resource_name = domainModel.resource_name,
+          //  resource_id = domainModel.resource_id,
+            text = domainModel.text
+        )
+    }
+
+}
+
+
+
 class QuranVersesMapper
     @Inject
-    constructor()
+    constructor(val translation_mapper:TranslationMapper)
     : EntityMapper<VerseEntity, Verse> {
     override fun mapFromEntity(entity: VerseEntity): Verse {
         return Verse(
@@ -69,7 +99,10 @@ class QuranVersesMapper
             verse_key = entity.verse_key,
             text_madani = entity.text_madani,
             text_simple = entity.text_simple,
-            page_number = entity.page_number
+            page_number = entity.page_number,
+            translations = entity.translations.map {
+                translation_mapper.mapFromEntity(it)
+            } as ArrayList<VerseTranslation>
         )
     }
 
@@ -84,7 +117,7 @@ class QuranVersesMapper
             text_madani = domainModel.text_madani,
             text_simple = domainModel.text_simple,
             page_number = domainModel.page_number,
-            translations = domainModel.
+            translations = arrayListOf()
         )
     }
 }

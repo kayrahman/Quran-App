@@ -10,23 +10,20 @@ class ChaptersNetworkEntity(
 
 
 class TranslationEntity(
-    @SerializedName("id") @Expose val id: Int,
+   // @SerializedName("id") @Expose val id: Int,
     @SerializedName("language_name") @Expose val language_name: String,
-    @SerializedName("text") @Expose val text: String,
-    @SerializedName("resource_name") @Expose val resource_name: String,
-    @SerializedName("resource_id") @Expose val resource_id: Int
+    @SerializedName("text") @Expose val text: String
+   // @SerializedName("resource_name") @Expose val resource_name: String,
+   // @SerializedName("resource_id") @Expose val resource_id: Int
 )
-class TranslationsEntity(
-    @SerializedName("translations") @Expose val translations : ArrayList<TranslationEntity>
 
-)
 
 class VersesNetworkEntity(
     @SerializedName("verses") @Expose val verses : ArrayList<VerseEntity>
 
 )
 
-class VerseEntity(
+data class VerseEntity(
     @SerializedName("id") @Expose val id: Int,
     @SerializedName("verse_number") @Expose val verse_number: Int,
     @SerializedName("chapter_id") @Expose val chapter_id: Int,
@@ -36,7 +33,7 @@ class VerseEntity(
     @SerializedName("text_madani") @Expose val text_madani: String,
     @SerializedName("text_simple") @Expose val text_simple: String,
     @SerializedName("page_number") @Expose val page_number: Int,
-    val translations : TranslationsEntity
+    @SerializedName("translations") @Expose val translations : ArrayList<TranslationEntity>
 )
 
 

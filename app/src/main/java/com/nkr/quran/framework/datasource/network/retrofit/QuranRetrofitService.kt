@@ -14,7 +14,9 @@ interface QuranRetrofitService {
 
     @GET("chapters/{chapter_id}/verses")
     suspend fun getVersesByChapterId(
-        @Path("chapter_id") chapter_id:String
+        @Path("chapter_id") chapter_id:String,
+        @Query("translations")translations:String,
+        @Query("language")lang:String
     ):VersesNetworkEntity
 
 }

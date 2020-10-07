@@ -16,8 +16,8 @@ constructor(
         return quranApiSerice.getChapters()
     }
 
-    override suspend fun getVersesByChapterNumber(chapter_num:String): VersesNetworkEntity {
-        return quranApiSerice.getVersesByChapterId(chapter_num)
+    override suspend fun getVersesByChapterNumber(chapter_num:String,trans:String,lang:String): VersesNetworkEntity {
+        return quranApiSerice.getVersesByChapterId(chapter_num,trans,lang)
     }
 
 

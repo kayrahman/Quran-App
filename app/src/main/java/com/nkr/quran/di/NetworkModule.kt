@@ -9,6 +9,7 @@ import com.nkr.quran.business.domain.models.Chapter
 import com.nkr.quran.framework.datasource.network.IQuranApiService
 import com.nkr.quran.framework.datasource.network.QuranNetworkServiceImpl
 import com.nkr.quran.framework.datasource.network.mappers.NetworkMapper
+import com.nkr.quran.framework.datasource.network.mappers.QuranVersesMapper
 import com.nkr.quran.framework.datasource.network.model.ChapterNetworkEntity
 import com.nkr.quran.framework.datasource.network.retrofit.QuranRetrofitService
 import dagger.Module
@@ -69,9 +70,10 @@ object NetworkModule {
     @Provides
     fun provideNetworkDataSource(
         quranRetrofitService: QuranRetrofitService,
-        networkMapper: NetworkMapper
+        networkMapper: NetworkMapper,
+        versesMapper:QuranVersesMapper
     ): INetworkDataSource =
-         NetworkDataSourceImpl(quranRetrofitService, networkMapper)
+         NetworkDataSourceImpl(quranRetrofitService, networkMapper,versesMapper)
 
 
 }

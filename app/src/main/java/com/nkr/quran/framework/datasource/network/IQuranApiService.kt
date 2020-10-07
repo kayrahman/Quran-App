@@ -7,7 +7,7 @@ interface IQuranApiService {
 
    // suspend fun getChapters(): List<ChapterNetworkEntity>
     suspend fun getChapters(): ChaptersNetworkEntity
-    suspend fun getVersesByChapterNumber(chapter_num : String) : VersesNetworkEntity
+    suspend fun getVersesByChapterNumber(chapter_num : String,translation:String,lang:String) : VersesNetworkEntity
 
 
 }

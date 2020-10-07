@@ -5,6 +5,7 @@ import com.codingwithmitch.daggerhiltplayground.business.domain.state.DataState
 import com.nkr.quran.business.data.cache.IChapterCacheDataSource
 import com.nkr.quran.business.domain.models.Chapter
 import com.nkr.quran.business.domain.models.Chapters
+import com.nkr.quran.business.domain.models.Verse
 import com.nkr.quran.framework.datasource.network.model.VersesNetworkEntity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
@@ -29,7 +30,7 @@ class QuranInfoRepository
      * if cached data found then load data from local database
      */
 
-    suspend fun getVersesByChapterNumber(chapter_num:String) : VersesNetworkEntity {
-        return networkDataSource.getVersesByChapterNumber(chapter_num)
+    suspend fun getVersesByChapterNumber(chapter_num:String,trans:String,lang:String) : List<Verse> {
+        return networkDataSource.getVersesByChapterNumber(chapter_num,trans,lang)
     }
 }
