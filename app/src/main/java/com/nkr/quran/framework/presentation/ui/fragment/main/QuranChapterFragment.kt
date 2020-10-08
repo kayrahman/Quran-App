@@ -50,10 +50,11 @@ class QuranChapterFragment : Fragment(), LifecycleOwner {
 
         viewModel.getQuranChapters()
 
-        bannerCardAnimator()
+     //   bannerCardAnimator()
 
-        setUpListener()
+       // setUpListener()
     }
+    /*
 
     private fun bannerCardAnimator() {
 
@@ -104,7 +105,7 @@ class QuranChapterFragment : Fragment(), LifecycleOwner {
         }
 
     }
-
+*/
 
     private fun subscribeToUi(adapter: QuranChapterListAdapter) {
         viewModel.chapterList.observe(

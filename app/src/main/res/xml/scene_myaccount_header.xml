@@ -98,9 +98,6 @@
             motion:layout_constraintBottom_toBottomOf="parent"
             motion:layout_constraintEnd_toEndOf="parent" />
 
-
-
-
         <Constraint
             android:id="@id/email"
             android:layout_width="wrap_content"
