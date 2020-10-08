@@ -12,150 +12,27 @@
     </data>
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="false"
+        >
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cly_name"
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@+id/fl_surah_list"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_margin="@dimen/space8dp"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="200dp"
+            android:theme="@style/AppTheme.AppBarOverlay">
 
-            <TextView
-                android:id="@+id/tv_salam_hc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Asslamuwalaikum"
-                android:textColor="@color/colorTextGray"
-                android:textSize="18sp"
-                android:fontFamily="@font/poppins_semibold"
-                app:layout_constraintBottom_toTopOf="@+id/tv_name"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <include
+                android:id="@+id/layout_header"
+                layout="@layout/layout_header_quran_chapter_fragment"/>
 
-            <TextView
-                android:id="@+id/tv_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Tahsin Rahman"
-                android:textColor="@color/colorPurpleDarker"
-                android:textSize="24sp"
-                android:fontFamily="@font/poppins_bold"
-                android:layout_marginBottom="@dimen/space8dp"
-                app:layout_constraintBottom_toTopOf="@+id/cv_last_read"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_salam_hc" />
+        </com.google.android.material.appbar.AppBarLayout>
 
+        <include
+            android:id="@+id/chapter_list"
+            layout="@layout/layout_quran_chapter_fragment_scrollable_list"/>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/cv_last_read"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_last_read"
-                android:paddingTop="@dimen/spaceXLarge"
-                android:paddingBottom="@dimen/spaceXLarge"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_name"
-
-                >
-
-                <TextView
-                    android:id="@+id/hc_last_read"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableStart="@drawable/ic_last_read_dark"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:layout_marginBottom="@dimen/spacing_small"
-                    android:gravity="center"
-                    android:text="Last Read"
-                    android:textColor="@color/colorOffWhite"
-                    app:layout_constraintBottom_toTopOf="@+id/tv_surah_name"
-                    app:layout_constraintStart_toStartOf="@+id/tv_surah_name"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_chainStyle="packed" />
-
-                <TextView
-                    android:id="@+id/tv_surah_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_bold"
-                    android:text="Surah Fatiha"
-                    android:textColor="@color/colorOffWhite"
-                    app:layout_constraintBottom_toTopOf="@+id/tv_ayah_num"
-                    app:layout_constraintStart_toStartOf="@+id/tv_ayah_num"
-                    app:layout_constraintTop_toBottomOf="@+id/hc_last_read" />
-
-                <TextView
-                    android:id="@+id/tv_ayah_num"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/spaceLarge"
-                    android:fontFamily="@font/poppins_medium"
-                    android:text="Ayah 1-3"
-                    android:textColor="@color/colorOffWhite"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_surah_name" />
-
-                <ImageView
-                    android:id="@+id/iv_quran"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/tv_ayah_num"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ic_quran" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-        <FrameLayout
-            android:id="@+id/fl_surah_list"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_margin="@dimen/space8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cly_name">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/chapter_list"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:clipToPadding="false"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:context="com.google.samples.apps.sunflower.GardenActivity"
-                tools:listitem="@layout/list_item_chapter" />
-
-            <ProgressBar
-                android:id="@+id/spinner"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|end"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
-                android:visibility="gone" />
-
-        </FrameLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

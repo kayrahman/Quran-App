@@ -18,6 +18,7 @@ import com.nkr.quran.databinding.QuranChapterFragmentBinding
 import com.nkr.quran.framework.presentation.ui.adapter.QuranChapterListAdapter
 import com.nkr.quran.framework.presentation.ui.viewModel.QuranChapterViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.fragment_surah_detail.view.*
 
 @AndroidEntryPoint
 class QuranChapterFragment : Fragment(), LifecycleOwner {
@@ -43,7 +44,7 @@ class QuranChapterFragment : Fragment(), LifecycleOwner {
         super.onViewCreated(view, savedInstanceState)
 
         val adapter = QuranChapterListAdapter()
-        binding.chapterList.adapter = adapter
+        binding.chapterList.chapterList.adapter = adapter
         subscribeToUi(adapter)
         setHasOptionsMenu(true)
 
@@ -57,19 +58,19 @@ class QuranChapterFragment : Fragment(), LifecycleOwner {
     private fun bannerCardAnimator() {
 
         //enter
-        val enter = ObjectAnimator.ofFloat(binding.tvSurahName,View.TRANSLATION_X,-300f,0f)
+        val enter = ObjectAnimator.ofFloat(binding.layoutHeader.tvSurahName,View.TRANSLATION_X,-300f,0f)
         enter.duration = 1000
         enter.interpolator = AccelerateInterpolator(1f)
 
         //shaker
-        val translator = ObjectAnimator.ofFloat(binding.hcLastRead,View.TRANSLATION_X,0f, 25f, -25f, 25f, -25f,15f, -15f, 6f, -6f, 0f)
+        val translator = ObjectAnimator.ofFloat(binding.layoutHeader.hcLastRead,View.TRANSLATION_X,0f, 25f, -25f, 25f, -25f,15f, -15f, 6f, -6f, 0f)
         translator.duration = 1500
         translator.repeatCount = 1
         translator.interpolator = AccelerateInterpolator(1f)
 
 
         //fader
-        val fader = ObjectAnimator.ofFloat(binding.ivQuran,View.ALPHA,0f)
+        val fader = ObjectAnimator.ofFloat(binding.layoutHeader.ivQuran,View.ALPHA,0f)
         fader.duration = 2000
         fader.repeatCount = ObjectAnimator.INFINITE
         fader.repeatMode =ObjectAnimator.REVERSE
@@ -84,7 +85,7 @@ class QuranChapterFragment : Fragment(), LifecycleOwner {
     }
 
     private fun setUpListener() {
-        binding.cvLastRead.setOnClickListener {
+        binding.layoutHeader.cvLastRead.setOnClickListener {
 
             val chapter_info = Chapter(
                 1, 1, true,
