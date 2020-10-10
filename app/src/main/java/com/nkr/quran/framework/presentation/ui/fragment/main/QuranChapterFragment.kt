@@ -8,10 +8,12 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AccelerateInterpolator
+import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.appbar.AppBarLayout
 import com.nkr.quran.R
 import com.nkr.quran.business.domain.models.Chapter
 import com.nkr.quran.databinding.QuranChapterFragmentBinding
@@ -19,6 +21,9 @@ import com.nkr.quran.framework.presentation.ui.adapter.QuranChapterListAdapter
 import com.nkr.quran.framework.presentation.ui.viewModel.QuranChapterViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_surah_detail.view.*
+import kotlinx.android.synthetic.main.layout_header_quran_chapter_fragment.*
+import kotlinx.android.synthetic.main.layout_header_quran_chapter_fragment.view.*
+import kotlinx.android.synthetic.main.quran_chapter_fragment.*
 
 @AndroidEntryPoint
 class QuranChapterFragment : Fragment(), LifecycleOwner {
@@ -50,11 +55,13 @@ class QuranChapterFragment : Fragment(), LifecycleOwner {
 
         viewModel.getQuranChapters()
 
-     //   bannerCardAnimator()
+        coordinateMotion()
 
-       // setUpListener()
+
+        bannerCardAnimator()
+
+        setUpListener()
     }
-    /*
 
     private fun bannerCardAnimator() {
 
@@ -105,13 +112,25 @@ class QuranChapterFragment : Fragment(), LifecycleOwner {
         }
 
     }
-*/
 
     private fun subscribeToUi(adapter: QuranChapterListAdapter) {
         viewModel.chapterList.observe(
             this, Observer {
                 adapter.submitList(it)
             })
+    }
+
+
+    private fun coordinateMotion() {
+       // val appBarLayout: AppBarLayout = findViewById(R.id.app_bar)
+       // val motionLayout: MotionLayout = R.id.motion_header
+
+        val listener = AppBarLayout.OnOffsetChangedListener { unused, verticalOffset ->
+            val seekPosition = -verticalOffset / binding.appBar.totalScrollRange.toFloat()
+          binding.layoutHeader.motionHeader.progress = seekPosition
+        }
+
+        binding.appBar.addOnOffsetChangedListener(listener)
     }
 
 }
